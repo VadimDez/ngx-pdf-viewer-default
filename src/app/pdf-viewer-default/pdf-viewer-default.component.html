@@ -1,0 +1,40 @@
+<div>
+    <header>
+        <span *ngIf="totalPages">
+            <button type="button" (click)="stepFromPage(-1)">prev</button>
+            <button type="button" (click)="stepFromPage(1)">next</button>
+
+            <span>{{ page }} of {{ totalPages }}</span>
+        </span>
+
+        <span class="pdf-viewer-default__search">
+            <button (click)="toggleSearch()">Search</button>
+            <span class="search" [hidden]="!isSearchShown">
+                <input type="text" #search>
+
+                <button type="button" (click)="findAgain(true)">prev</button>
+                <button type="button" (click)="findAgain()">next</button>
+                <label>
+                    <input type="checkbox">
+                    Highlight All
+                </label>
+
+                <label>
+                    <input type="checkbox" [(ngModel)]="isCaseSensativeSearch">
+                    Match case
+                </label>
+            </span>
+        </span>
+
+        <button type="button" (click)="zoom(0.2)">+</button>
+        <button type="button" (click)="zoom(-0.2)">-</button>
+    </header>
+    <section>
+        <pdf-viewer [src]="src"
+                    [zoom]="zoomValue"
+                    [(page)]="page"
+                    [show-all]="true"
+                    (after-load-complete)="onLoadComplete($event)"
+        ></pdf-viewer>
+    </section>
+</div>

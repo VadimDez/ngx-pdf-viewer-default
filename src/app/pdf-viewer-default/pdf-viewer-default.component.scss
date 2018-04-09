@@ -1,0 +1,44 @@
+pdf-viewer-default,
+:host {
+  display: block;
+  background-color: #404040;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  > div {
+    position: relative;
+    
+    > header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 32px;
+    }
+
+    > section {
+      position: absolute;
+      top: 32px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .pdf-viewer-default__search {
+    position: relative;
+
+    .search {
+      position: absolute;
+      top: 32px;
+      left: 0;
+      width: 440px;
+      z-index: 10;
+      //display: none;
+
+    }
+  }
+}
