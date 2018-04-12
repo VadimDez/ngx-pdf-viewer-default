@@ -76,6 +76,20 @@ export class PdfViewerDefaultComponent implements OnInit, OnDestroy {
     }
   }
 
+  public onFileSelected() {
+    const $pdf: any = document.querySelector('#file');
+
+    if (typeof (FileReader) !== 'undefined') {
+      const reader = new FileReader();
+
+      reader.onload = (e: any) => {
+        this.src = e.target.result;
+      };
+
+      reader.readAsArrayBuffer($pdf.files[0]);
+    }
+  }
+
   private find(stringToSearch: string) {
     this.pdfComponent.pdfFindController.executeCommand('find', {
       caseSensitive: this.isCaseSensativeSearch,

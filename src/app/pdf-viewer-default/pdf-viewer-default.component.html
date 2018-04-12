@@ -4,7 +4,7 @@
             <button type="button" (click)="stepFromPage(-1)">prev</button>
             <button type="button" (click)="stepFromPage(1)">next</button>
 
-            <span>{{ page }} of {{ totalPages }}</span>
+            <span><input type="text" [ngModel]="page"> of {{ totalPages }}</span>
         </span>
 
         <span class="pdf-viewer-default__search">
@@ -28,6 +28,9 @@
 
         <button type="button" (click)="zoom(0.2)">+</button>
         <button type="button" (click)="zoom(-0.2)">-</button>
+
+
+        <input (change)="onFileSelected()" type="file" id="file">
     </header>
     <section>
         <pdf-viewer [src]="src"
