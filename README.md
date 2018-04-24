@@ -1,5 +1,7 @@
 # Default PDF Viewer
 
+Default/Standard like PDF
+
 #### Demo page
 [http://vadimdez.github.io/ngx-pdf-viewer-default/](http://vadimdez.github.io/ngx-pdf-viewer-default/)
 ## License
