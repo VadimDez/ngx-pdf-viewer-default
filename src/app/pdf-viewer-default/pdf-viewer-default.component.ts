@@ -25,6 +25,7 @@ export class PdfViewerDefaultComponent implements OnInit, OnDestroy {
   searchString: string;
   isCaseSensativeSearch = false;
 
+  @ViewChild('mainElem') mainElem: ElementRef;
   @ViewChild(PdfViewerComponent) pdfComponent;
   @ViewChild('search') searchRef: ElementRef;
 
@@ -87,6 +88,17 @@ export class PdfViewerDefaultComponent implements OnInit, OnDestroy {
       };
 
       reader.readAsArrayBuffer($pdf.files[0]);
+    }
+  }
+
+  public goToFullscreen() {
+    const fn = this.mainElem.nativeElement.requestFullScreen
+    || this.mainElem.nativeElement.webkitRequestFullScreen
+    || this.mainElem.nativeElement.mozRequestFullScreen
+    || this.mainElem.nativeElement.msRequestFullscreen
+
+    if (fn) {
+      fn();
     }
   }
 
