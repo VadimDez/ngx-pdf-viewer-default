@@ -92,14 +92,18 @@ export class PdfViewerDefaultComponent implements OnInit, OnDestroy {
   }
 
   public goToFullscreen() {
-    const fn = this.mainElem.nativeElement.requestFullScreen
-    || this.mainElem.nativeElement.webkitRequestFullScreen
-    || this.mainElem.nativeElement.mozRequestFullScreen
-    || this.mainElem.nativeElement.msRequestFullscreen
+    const fn = this.getFullscreenFn(this.mainElem.nativeElement.parentElement);
 
     if (fn) {
-      fn();
+      fn.call(this.mainElem.nativeElement.parentElement);
     }
+  }
+
+  private getFullscreenFn(elem: any) {
+    return elem.requestFullScreen
+    || elem.webkitRequestFullScreen
+    || elem.mozRequestFullScreen
+    || elem.msRequestFullscreen
   }
 
   private find(stringToSearch: string) {
