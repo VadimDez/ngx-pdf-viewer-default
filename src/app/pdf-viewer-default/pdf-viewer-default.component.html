@@ -28,7 +28,22 @@
 
         <button type="button" (click)="zoom(0.2)">+</button>
         <button type="button" (click)="zoom(-0.2)">-</button>
-        
+
+        <select title="Zoom" style="min-width: 146px;" [(ngModel)]="zoomType">
+            <option title="" value="auto" selected="selected">Automatic Zoom</option>
+            <option title="" value="page-actual">Actual Size</option>
+            <option title="" value="page-fit">Page Fit</option>
+            <option title="" value="page-width">Page Width</option>
+            <option title="" value="custom" disabled="disabled" hidden="true">{{ zoomType == 'custom' ? zoomValue * 100 : '120' }}%</option>
+            <option title="" value="0.5">50%</option>
+            <option title="" value="0.75">75%</option>
+            <option title="" value="1">100%</option>
+            <option title="" value="1.25">125%</option>
+            <option title="" value="1.5">150%</option>
+            <option title="" value="2">200%</option>
+            <option title="" value="3">300%</option>
+            <option title="" value="4">400%</option>
+          </select>
         
         <input (change)="onFileSelected()" type="file" id="file">
 
@@ -36,7 +51,7 @@
     </header>
     <section>
         <pdf-viewer [src]="src"
-                    [zoom]="zoomValue"
+                    [zoom]="zoomType == 'custom' ? zoomValue : zoomType"
                     [(page)]="page"
                     [show-all]="true"
                     (after-load-complete)="onLoadComplete($event)"

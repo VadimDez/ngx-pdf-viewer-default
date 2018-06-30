@@ -24,6 +24,7 @@ export class PdfViewerDefaultComponent implements OnInit, OnDestroy {
   isSearchShown = false;
   searchString: string;
   isCaseSensativeSearch = false;
+  zoomType: any = 'auto';
 
   @ViewChild('mainElem') mainElem: ElementRef;
   @ViewChild(PdfViewerComponent) pdfComponent;
@@ -48,6 +49,7 @@ export class PdfViewerDefaultComponent implements OnInit, OnDestroy {
   }
 
   public zoom(value: number) {
+    this.zoomType = 'custom';
     this.zoomValue += value;
   }
 
