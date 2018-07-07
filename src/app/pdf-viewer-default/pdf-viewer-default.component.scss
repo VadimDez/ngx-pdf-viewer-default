@@ -1,30 +1,42 @@
+$color-grey: #404040;
+$color-grey-light: #5a5a5a;
+
 pdf-viewer-default,
 :host {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
   display: block;
-  background-color: #404040;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  background-color: $color-grey;
 
   > div {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-width: 320px;
     
     > header {
-      position: absolute;
+      position: relative;
+      z-index: 10;
       top: 0;
       left: 0;
       right: 0;
       height: 32px;
+      background-color: $color-grey-light;
     }
 
     > section {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
       position: absolute;
       top: 32px;
-      left: 0;
-      bottom: 0;
       right: 0;
+      bottom: 0;
+      left: 0;
+      outline: none;
     }
   }
 
@@ -32,13 +44,13 @@ pdf-viewer-default,
     position: relative;
 
     .search {
+      background-color: $color-grey-light;
+      padding: 4px;
       position: absolute;
       top: 32px;
       left: 0;
       width: 440px;
       z-index: 10;
-      //display: none;
-
     }
   }
 }

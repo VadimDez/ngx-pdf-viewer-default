@@ -50,7 +50,7 @@ export class PdfViewerDefaultComponent implements OnInit, OnDestroy {
 
   public zoom(value: number) {
     this.zoomType = 'custom';
-    this.zoomValue += value;
+    this.zoomValue = parseFloat((this.zoomValue + value).toFixed(2));
   }
 
   public stepFromPage(value: number) {
