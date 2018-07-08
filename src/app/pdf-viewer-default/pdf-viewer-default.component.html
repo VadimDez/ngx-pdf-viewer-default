@@ -1,10 +1,10 @@
 <div #mainElem>
     <header>
-        <span *ngIf="totalPages">
+        <span *ngIf="totalPages" class="page-manipulation">
             <button type="button" (click)="stepFromPage(-1)">prev</button>
             <button type="button" (click)="stepFromPage(1)">next</button>
 
-            <span><input type="text" [ngModel]="page"> of {{ totalPages }}</span>
+            <span><input type="text" [ngModel]="page" class="page-number"> of {{ totalPages }}</span>
         </span>
 
         <span class="pdf-viewer-default__search">
@@ -26,24 +26,26 @@
             </span>
         </span>
 
-        <button type="button" (click)="zoom(0.2)">+</button>
-        <button type="button" (click)="zoom(-0.2)">-</button>
-
-        <select title="Zoom" style="min-width: 146px;" [(ngModel)]="zoomType">
-            <option title="" value="auto" selected="selected">Automatic Zoom</option>
-            <option title="" value="page-actual">Actual Size</option>
-            <option title="" value="page-fit">Page Fit</option>
-            <option title="" value="page-width">Page Width</option>
-            <option title="" value="custom" disabled="disabled" hidden="true">{{ zoomType == 'custom' ? zoomValue * 100 : '120' }}%</option>
-            <option title="" value="0.5">50%</option>
-            <option title="" value="0.75">75%</option>
-            <option title="" value="1">100%</option>
-            <option title="" value="1.25">125%</option>
-            <option title="" value="1.5">150%</option>
-            <option title="" value="2">200%</option>
-            <option title="" value="3">300%</option>
-            <option title="" value="4">400%</option>
-        </select>
+        <span class="zoom-container">
+            <button type="button" (click)="zoom(0.2)">+</button>
+            <button type="button" (click)="zoom(-0.2)">-</button>
+    
+            <select title="Zoom" style="min-width: 146px;" [(ngModel)]="zoomType">
+                <option title="" value="auto" selected="selected">Automatic Zoom</option>
+                <option title="" value="page-actual">Actual Size</option>
+                <option title="" value="page-fit">Page Fit</option>
+                <option title="" value="page-width">Page Width</option>
+                <option title="" value="custom" disabled="disabled" hidden="true">{{ zoomType == 'custom' ? zoomValue * 100 : '120' }}%</option>
+                <option title="" value="0.5">50%</option>
+                <option title="" value="0.75">75%</option>
+                <option title="" value="1">100%</option>
+                <option title="" value="1.25">125%</option>
+                <option title="" value="1.5">150%</option>
+                <option title="" value="2">200%</option>
+                <option title="" value="3">300%</option>
+                <option title="" value="4">400%</option>
+            </select>
+        </span>
         
         <input (change)="onFileSelected()" type="file" id="file">
 
