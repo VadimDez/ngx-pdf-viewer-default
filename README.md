@@ -1,4 +1,4 @@
-# Default PDF Viewer
+# Basic PDF Viewer
 
 Default/Standard like PDF
 
