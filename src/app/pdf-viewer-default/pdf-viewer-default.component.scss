@@ -36,6 +36,20 @@ pdf-viewer-default,
         border: none;
         background: rgba(0,0,0,0);
         outline: none;
+
+        &.btn-arrow {
+          content: '';
+          cursor: pointer;
+          width: 16px;
+          height: 16px;
+          background-repeat: no-repeat;
+          background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAtUlEQVR4AY3KQQqCQBTG8QdBJ6hFq+7gCTpEB4k6ULQQEUQYqBNI0CIIWgRFgZSFONLehX3F1PON2aL5LebB96c/HrqYIMXdSDDHACQIRG3qT8e4IHm54vZI7YS/zsHFmRWLglh1zIaIWXksiVXHqIeThZgcLeyFHYidqAcKsbG1xIYyATlaYdOkFTn0eU4eYl2XhzKbJAuwElnAs5VoH8s37duznXiIEGlP5mbialfmn8n3/ATF/vfFQRwIrAAAAABJRU5ErkJggg==');
+
+          &.btn-prev {
+            transform: rotate(180deg);
+          }
+        }
+
       }
       
       .page-manipulation {
