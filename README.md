@@ -10,6 +10,7 @@ Default/Standard like PDF
 * Next/Prev page
 * Go to page
 * Search
+* Fullscreen mode
 
 ## License
 
