@@ -1,6 +1,6 @@
 # Basic PDF Viewer
 
-Default/Standard like PDF
+PDF Viewer with basic layout.
 
 #### Demo page
 [http://vadimdez.github.io/ngx-pdf-viewer-default/](http://vadimdez.github.io/ngx-pdf-viewer-default/)
@@ -10,6 +10,7 @@ Default/Standard like PDF
 * Next/Prev page
 * Go to page
 * Search
+* Fullscreen mode
 
 ## License
 
